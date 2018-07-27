@@ -5,7 +5,9 @@
         <div class="cover-inner">
             <div class="cover-contents">
                 <h1>気になるモノが見つかるサイト</h1>
-                <a href="" class="btn btn-success btn-lg">Mizcalで見つける</a>
+                @if (!Auth::check())
+                    <a href="{{ route('signup.get') }}" class="btn btn-success btn-lg">Mizcalで見つける</a>
+                @endif
             </div>
         </div>
     </div>
