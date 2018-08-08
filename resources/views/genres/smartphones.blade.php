@@ -17,8 +17,8 @@
     <div class="col-xs-12">
         <ul class="nav nav-tabs nav-justified">
             <li role="presentation" class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ route('welcome') }}">全てのアイテム</a></li>
-            <li role="presentation" class="{{ Request::is('genres?id=560202') ? 'active' : '' }}"><a href="{{ route('genres.index', ['id' => 560202]) }}">スマートフォン</a></li>
-            <li role="presentation" class="{{ Request::is('genres?id=560029') ? 'active' : '' }}"><a href="{{ route('genres.index', ['id' => 560029]) }}">タブレット</a></li>
+            <li role="presentation" class="{{ Request::is('genres/smartphones') ? 'active' : '' }}"><a href="{{ route('genres.smartphones') }}">スマートフォン</a></li>
+            <li role="presentation" class="{{ Request::is('genres/tablets') ? 'active' : '' }}"><a href="{{ route('genres.tablets') }}">タブレット</a></li>
         </ul>
         @include('items.items')
         {!! $items->render() !!}

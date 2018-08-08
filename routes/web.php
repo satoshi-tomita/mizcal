@@ -13,7 +13,8 @@
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
-Route::get('genres', 'GenresController@index')->name('genres.index');
+Route::get('genres/smartphones', 'GenresController@smartphones')->name('genres.smartphones');
+Route::get('genres/tablets', 'GenresController@tablets')->name('genres.tablets');
 
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
 Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
