@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index')->name('welcome');
+
+Route::get('genres', 'GenresController@index')->name('genres.index');
 
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
 Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
@@ -24,7 +26,7 @@ Route::get('ranking/want', 'RankingController@want')->name('ranking.want');
 Route::get('ranking/like', 'RankingController@like')->name('ranking.like');
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::resource('items', 'ItemsController', ['only' => ['index', 'show']]);
+    Route::resource('items', 'ItemsController', ['only' => ['show']]);
     Route::post('want', 'ItemUserController@want')->name('item_user.want');
     Route::delete('want', 'ItemUserController@dont_want')->name('item_user.dont_want');
     Route::post('like', 'ItemUserController@like')->name('item_user.like');
